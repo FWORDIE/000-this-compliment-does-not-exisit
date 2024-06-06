@@ -19,13 +19,13 @@
     let duration = 0;
     let done = true;
     const playVoice = async  () => {
-        compliment = ''
         done = false
-        await delay(300)
         let compliments = data.data.allCompliments;
         compliment = compliments[Math.floor(Math.random() * compliments.length)];
         var audio = new Audio(compliment.audio[0].url);
-        audio.addEventListener("loadedmetadata", (event) => {
+        audio.addEventListener("loadedmetadata", async (event) => {
+            await delay(300)
+            text = compliment.text
             duration = audio.duration;
             play = true;
             audio.play();
@@ -34,7 +34,7 @@
             finished();
         });
     };
-
+    $: text = ''
     const finished = async  () => {
 
         await delay(300)
@@ -49,8 +49,8 @@
     {#if compliment}
         <div class="textHolder">
             {#if play}
-                <Typewriter interval={(duration * 1000) / compliment.text.length - 5} cursor={false} mode={"cascade"}>
-                    <h1>{compliment.text}</h1>
+                <Typewriter interval={(duration * 1000) / text.length - 5} cursor={false} >
+                    <h1>{text}</h1>
                 </Typewriter>
             {:else}
             <h1>❤️</h1>
