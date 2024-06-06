@@ -1,4 +1,4 @@
-import { PUBLIC_datoToken } from "$env/static/public";
+import { datoToken } from "$env/static/private";
 
 export async function load({ params }) {
     const query = `
