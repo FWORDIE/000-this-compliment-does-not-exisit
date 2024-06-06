@@ -16,7 +16,7 @@ export async function load({ params }) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${PUBLIC_datoToken}`,
+            Authorization: `Bearer ${datoToken}`,
         },
         body: JSON.stringify({ query }),
     });
