@@ -1,0 +1,33 @@
+{
+	"name": "000-this-compliment-does-not-exisit",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^5.0.3"
+	},
+	"type": "module",
+	"dependencies": {
+		"@datocms/cma-client-browser": "^3.3.2",
+		"@datocms/cma-client-node": "^3.3.2",
+		"elevenlabs": "^0.6.0",
+		"elevenlabs-js": "^1.2.6",
+		"fs": "0.0.1-security",
+		"howler": "^2.2.4",
+		"sass": "^1.77.4",
+		"svelte-typewriter": "^3.2.3"
+	}
+}
