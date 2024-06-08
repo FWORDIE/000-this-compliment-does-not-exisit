@@ -68,7 +68,7 @@
             <p class="title">❤️</p>
             <p><b>This Compliment Does Not Exist</b></p>
             <p>
-                Virtual Hugs from your friends at <a href="https://openai.com/" target="_blank">OpenAi</a> and
+                Virtual hugs from your friends at <a href="https://openai.com/" target="_blank">OpenAi</a> and
                 <a href="https://elevenlabs.io" target="_blank">ElevenLabs</a>
             </p>
             <p>Made by <a href="https://www.fredwordie.com/">Fred Wordie</a></p>
