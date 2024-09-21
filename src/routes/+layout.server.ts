@@ -1,52 +1,56 @@
 import { datoToken } from "$env/static/private";
+export const prerender = true;
+import data from '$lib/data.json'
 
 export async function load({ params }) {
-    let responseArray = [];
-    let query = `
-        query {
-            _allComplimentsMeta {
-                count
-              }
-          }
-    `;
+    // let responseArray = [];
+    // let query = `
+    //     query {
+    //         _allComplimentsMeta {
+    //             count
+    //           }
+    //       }
+    // `;
 
-    const response1 = await fetch("https://graphql.datocms.com/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${datoToken}`,
-        },
-        body: JSON.stringify({ query }),
-    });
+    // const response1 = await fetch("https://graphql.datocms.com/", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: `Bearer ${datoToken}`,
+    //     },
+    //     body: JSON.stringify({ query }),
+    // });
 
-    const jsontotal = await response1.json();
-    while (responseArray.length < jsontotal.data._allComplimentsMeta.count) {
+    // const jsontotal = await response1.json();
+    // while (responseArray.length < jsontotal.data._allComplimentsMeta.count) {
+    //     query = `
+    //     query {
+    //         allCompliments(skip: "${responseArray.length}", first: "100") {
+    //           text
+    //           audio {
+    //             url
+    //           }
+    //         }
+    //       }
+    // `;
+    //     const response = await fetch("https://graphql.datocms.com/", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             Authorization: `Bearer ${datoToken}`,
+    //         },
+    //         body: JSON.stringify({ query }),
+    //     });
+    //     const json = await response.json();
 
-        query = `
-        query {
-            allCompliments(skip: "${responseArray.length}", first: "100") {
-              text
-              audio {
-                url
-              }
-            }
-          }
-    `;
-        const response = await fetch("https://graphql.datocms.com/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${datoToken}`,
-            },
-            body: JSON.stringify({ query }),
-        });
-        const json = await response.json();
+    //     const returnable = json.data;
+    //     // console.log(returnable.allCompliments.length);
+    //     responseArray = [...responseArray, ...returnable.allCompliments]
+    // }
 
-        const returnable = json.data;
-        // console.log(returnable.allCompliments.length);
-        responseArray = [...responseArray, ...returnable.allCompliments]
-    }
 
+    let responseArray = data.data
+    // responseArray=  await responseArray.json()
     return {
         data: responseArray,
     };

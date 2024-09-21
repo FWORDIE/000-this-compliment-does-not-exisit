@@ -8,6 +8,7 @@
     let play = false;
     let compliment = {};
     onMount(async () => {
+        console.log(data)
         let compliments = data.data
         compliment = compliments[Math.floor(Math.random() * compliments.length)];
         // var sound = new Howl({
