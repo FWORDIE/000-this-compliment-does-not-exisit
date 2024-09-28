@@ -1,5 +1,4 @@
 import { datoToken } from "$env/static/private";
-export const prerender = true;
 import data from '$lib/data.json'
 
 export async function load({ params }) {
